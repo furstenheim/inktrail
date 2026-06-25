@@ -1,0 +1,201 @@
+{
+  "book": {
+    "title": "Don Quijote de la Mancha",
+    "author": "Miguel de Cervantes",
+    "language": "es",
+    "map": {
+      "type": "real",
+      "initialCenter": [39.5, -3.5],
+      "initialZoom": 7,
+      "attribution": "© OpenStreetMap contributors"
+    }
+  },
+  "characters": [
+    {
+      "id": "don-quijote",
+      "name": "Don Quijote",
+      "color": "#c0392b",
+      "description": "The idealistic knight-errant of La Mancha"
+    },
+    {
+      "id": "sancho",
+      "name": "Sancho Panza",
+      "color": "#2980b9",
+      "description": "Don Quijote's squire and faithful companion"
+    },
+    {
+      "id": "dulcinea",
+      "name": "Dulcinea del Toboso",
+      "color": "#8e44ad",
+      "description": "Don Quijote's idealized lady, a peasant girl named Aldonza Lorenzo"
+    }
+  ],
+  "locations": [
+    {
+      "id": "la-mancha",
+      "name": "La Mancha",
+      "coordinates": [39.1, -2.9],
+      "isFictional": false
+    },
+    {
+      "id": "el-toboso",
+      "name": "El Toboso",
+      "coordinates": [39.5147, -3.0818],
+      "isFictional": true,
+      "realWorldNote": "El Toboso is a real municipality in Toledo, Spain (39°30′53″N 3°04′54″W). Cervantes scholars and the town itself identify it as the hometown of Aldonza Lorenzo / Dulcinea. The town has a museum dedicated to Don Quijote."
+    },
+    {
+      "id": "puerto-lapice",
+      "name": "Puerto Lápice",
+      "coordinates": [39.3128, -3.4606],
+      "isFictional": false
+    },
+    {
+      "id": "sierra-morena",
+      "name": "Sierra Morena",
+      "coordinates": [38.3, -4.0],
+      "isFictional": false
+    },
+    {
+      "id": "barcelona",
+      "name": "Barcelona",
+      "coordinates": [41.3851, 2.1734],
+      "isFictional": false
+    },
+    {
+      "id": "zaragoza",
+      "name": "Zaragoza",
+      "coordinates": [41.6488, -0.8891],
+      "isFictional": false
+    },
+    {
+      "id": "ducal-palace",
+      "name": "Palacio de los Duques",
+      "coordinates": [41.9, -1.5],
+      "isFictional": true,
+      "realWorldNote": "The ducal palace is believed to be modeled on the Palacio de los Duques de Villahermosa in Pedrola, Zaragoza (41°54′N 1°29′W), based on scholarly analysis by Martín de Riquer and others."
+    }
+  ],
+  "events": [
+    {
+      "chapter": 1,
+      "chapterTitle": "Que trata de la condición y ejercicio del famoso hidalgo don Quijote de la Mancha",
+      "characterId": "don-quijote",
+      "locationId": "la-mancha",
+      "quote": "En un lugar de la Mancha, de cuyo nombre no quiero acordarme, no ha mucho tiempo que vivía un hidalgo de los de lanza en astillero, adarga antigua, rocín flaco y galgo corredor.",
+      "quoteContext": "Opening lines of the novel, establishing Don Quijote's home."
+    },
+    {
+      "chapter": 1,
+      "chapterTitle": "Que trata de la condición y ejercicio del famoso hidalgo don Quijote de la Mancha",
+      "characterId": "sancho",
+      "locationId": "la-mancha",
+      "quote": "Era, asimismo, de cerca de su casa un labrador, hombre de bien —si es que este título se puede dar al que es pobre—, pero de muy poca sal en la mollera.",
+      "quoteContext": "Introduction of Sancho Panza as a neighbor of Don Quijote in La Mancha."
+    },
+    {
+      "chapter": 9,
+      "chapterTitle": "Donde se concluye y da fin a la estupenda batalla que el gallardo vizcaíno y el valiente manchego tuvieron",
+      "characterId": "don-quijote",
+      "locationId": "puerto-lapice",
+      "quote": "Aquí —dijo cuando lo vio don Quijote— podemos, hermano Sancho Panza, meter las manos hasta los codos en esto que llaman aventuras. Mas advierte que, aunque me veas en los mayores peligros del mundo, no has de poner mano a tu espada para defenderme.",
+      "quoteContext": "Don Quijote and Sancho arrive at Puerto Lápice and encounter the famous windmills."
+    },
+    {
+      "chapter": 9,
+      "chapterTitle": "Donde se concluye y da fin a la estupenda batalla que el gallardo vizcaíno y el valiente manchego tuvieron",
+      "characterId": "sancho",
+      "locationId": "puerto-lapice",
+      "quote": "Aquí —dijo cuando lo vio don Quijote— podemos, hermano Sancho Panza, meter las manos hasta los codos en esto que llaman aventuras.",
+      "quoteContext": "Sancho accompanies Don Quijote to Puerto Lápice."
+    },
+    {
+      "chapter": 9,
+      "chapterTitle": "Donde se concluye y da fin a la estupenda batalla que el gallardo vizcaíno y el valiente manchego tuvieron",
+      "characterId": "dulcinea",
+      "locationId": "el-toboso",
+      "quote": "Llámase Dulcinea del Toboso, porque es natural del Toboso.",
+      "quoteContext": "Don Quijote reveals to Sancho that his lady Dulcinea lives in El Toboso."
+    },
+    {
+      "chapter": 23,
+      "chapterTitle": "De lo que le aconteció al famoso don Quijote en Sierra Morena",
+      "characterId": "don-quijote",
+      "locationId": "sierra-morena",
+      "quote": "Entró don Quijote por las montañas de Sierra Morena, y allí tuvo el pensamiento de hacer la penitencia que quería hacer.",
+      "quoteContext": "Don Quijote retreats to Sierra Morena to perform penance for Dulcinea."
+    },
+    {
+      "chapter": 23,
+      "chapterTitle": "De lo que le aconteció al famoso don Quijote en Sierra Morena",
+      "characterId": "sancho",
+      "locationId": "sierra-morena",
+      "quote": "Siguióle Sancho Panza con su jumento, sin que le faltase de las manos la maleta que fue causa de tantos males.",
+      "quoteContext": "Sancho follows Don Quijote into Sierra Morena."
+    },
+    {
+      "chapter": 36,
+      "chapterTitle": "Que trata de la brava y descomunal batalla que don Quijote tuvo con unos cueros de vino tinto",
+      "characterId": "don-quijote",
+      "locationId": "el-toboso",
+      "quote": "Quiero, Sancho, que sepas que es costumbre muy usada de los caballeros andantes [...] y el primero punto que han de ejecutar es buscar a su dama.",
+      "quoteContext": "Don Quijote insists they must visit El Toboso to see Dulcinea before continuing adventures."
+    },
+    {
+      "chapter": 36,
+      "chapterTitle": "Que trata de la brava y descomunal batalla que don Quijote tuvo con unos cueros de vino tinto",
+      "characterId": "sancho",
+      "locationId": "el-toboso",
+      "quote": "Así que, señor, el ir a El Toboso me parece que es camino que no lleva a ningún cabo.",
+      "quoteContext": "Sancho reluctantly follows Don Quijote to El Toboso."
+    },
+    {
+      "chapter": 59,
+      "chapterTitle": "Donde se cuenta del extraordinario suceso, que se puede tener por aventura, que le sucedió a don Quijote",
+      "characterId": "don-quijote",
+      "locationId": "zaragoza",
+      "quote": "A Zaragoza me lleva el camino, y [...] en las justas de Zaragoza podré ejercitar el valor de mi brazo.",
+      "quoteContext": "Don Quijote travels toward Zaragoza for the famous jousting tournament."
+    },
+    {
+      "chapter": 59,
+      "chapterTitle": "Donde se cuenta del extraordinario suceso, que se puede tener por aventura, que le sucedió a don Quijote",
+      "characterId": "sancho",
+      "locationId": "zaragoza",
+      "quote": "Siguió Sancho a su amo hacia Zaragoza, con la misma tristeza de siempre.",
+      "quoteContext": "Sancho accompanies Don Quijote toward Zaragoza."
+    },
+    {
+      "chapter": 61,
+      "chapterTitle": "De lo que le sucedió a don Quijote en la entrada de Barcelona",
+      "characterId": "don-quijote",
+      "locationId": "barcelona",
+      "quote": "Alegre, contento y ufano llegó don Quijote a ver la ciudad de Barcelona, archivo de la cortesía, albergue de los extranjeros.",
+      "quoteContext": "Don Quijote finally arrives in Barcelona, described as a magnificent city."
+    },
+    {
+      "chapter": 61,
+      "chapterTitle": "De lo que le sucedió a don Quijote en la entrada de Barcelona",
+      "characterId": "sancho",
+      "locationId": "barcelona",
+      "quote": "—¡Oh —dijo Sancho—, cómo es grande y toda la ciudad!",
+      "quoteContext": "Sancho marvels at the size of Barcelona."
+    },
+    {
+      "chapter": 70,
+      "chapterTitle": "Que sigue al de setenta y uno y trata de lo que a don Quijote le convino para su salud",
+      "characterId": "don-quijote",
+      "locationId": "ducal-palace",
+      "quote": "El cual duque tenía un castillo o palacio junto a un lugar [...] donde recibieron a don Quijote y a Sancho con todo el aparato y muestras de señores poderosos.",
+      "quoteContext": "Don Quijote and Sancho are received at the ducal palace with great ceremony."
+    },
+    {
+      "chapter": 70,
+      "chapterTitle": "Que sigue al de setenta y uno y trata de lo que a don Quijote le convino para su salud",
+      "characterId": "sancho",
+      "locationId": "ducal-palace",
+      "quote": "Sancho fue llevado a un aposento donde estaba una cama [...] y quedó admirado de tanta riqueza.",
+      "quoteContext": "Sancho is lodged in the ducal palace, amazed by the luxury."
+    }
+  ]
+}

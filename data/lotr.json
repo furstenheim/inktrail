@@ -1,0 +1,222 @@
+{
+  "book": {
+    "title": "The Lord of the Rings",
+    "author": "J.R.R. Tolkien",
+    "language": "en",
+    "map": {
+      "type": "fantasy",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Karte_Mittelerde.png/1280px-Karte_Mittelerde.png",
+      "imageBounds": [[0, 0], [897, 1280]],
+      "initialCenter": [550, 640],
+      "initialZoom": 1,
+      "attribution": "Map of Middle-earth by <a href='https://commons.wikimedia.org/wiki/File:Karte_Mittelerde.png'>Peter Fenďa</a>, CC BY-SA 3.0"
+    }
+  },
+  "characters": [
+    {
+      "id": "frodo",
+      "name": "Frodo Baggins",
+      "color": "#e8c55a",
+      "description": "The Ring-bearer, a Hobbit of the Shire"
+    },
+    {
+      "id": "aragorn",
+      "name": "Aragorn",
+      "color": "#4a9eda",
+      "description": "Ranger of the North, heir of Isildur"
+    },
+    {
+      "id": "gandalf",
+      "name": "Gandalf",
+      "color": "#e0e0e0",
+      "description": "Wizard of the Order of Istari"
+    }
+  ],
+  "locations": [
+    {
+      "id": "shire",
+      "name": "The Shire",
+      "coordinates": [270, 215],
+      "isFictional": true,
+      "realWorldNote": "The Shire is modeled on the English Midlands countryside, particularly the area around Birmingham and Worcestershire. Tolkien explicitly stated this in letters."
+    },
+    {
+      "id": "bree",
+      "name": "Bree",
+      "coordinates": [305, 335],
+      "isFictional": true,
+      "realWorldNote": "A crossroads town in Eriador. Located at the intersection of the East-West Road and the Greenway, approximately at map pixel [305, 335]."
+    },
+    {
+      "id": "rivendell",
+      "name": "Rivendell",
+      "coordinates": [320, 470],
+      "isFictional": true,
+      "realWorldNote": "The Last Homely House, located in a hidden valley in the Misty Mountains. Tolkien said it was partly inspired by Lauterbrunnen valley in Switzerland."
+    },
+    {
+      "id": "moria",
+      "name": "Mines of Moria",
+      "coordinates": [400, 505],
+      "isFictional": true,
+      "realWorldNote": "The great underground realm of the Dwarves (Khazad-dûm) beneath the Misty Mountains."
+    },
+    {
+      "id": "lothlorien",
+      "name": "Lothlórien",
+      "coordinates": [440, 530],
+      "isFictional": true,
+      "realWorldNote": "The elvish realm of Galadriel and Celeborn in the angle between the rivers Celebrant and Anduin."
+    },
+    {
+      "id": "rohan",
+      "name": "Rohan (Edoras)",
+      "coordinates": [530, 580],
+      "isFictional": true,
+      "realWorldNote": "The kingdom of the Rohirrim. Edoras, the capital, sits on a hill at the foot of the White Mountains. Its culture and language are modeled on Anglo-Saxon England."
+    },
+    {
+      "id": "gondor",
+      "name": "Minas Tirith",
+      "coordinates": [590, 640],
+      "isFictional": true,
+      "realWorldNote": "The capital of Gondor, a seven-tiered city built into the face of Mount Mindolluin. Visually inspired by various Mediterranean and Byzantine fortified cities."
+    },
+    {
+      "id": "mordor",
+      "name": "Mordor (Mount Doom)",
+      "coordinates": [600, 730],
+      "isFictional": true,
+      "realWorldNote": "The dark land of Sauron, east of Gondor behind the Ephel Dúath mountain range. Mount Doom (Orodruin) is where the One Ring must be destroyed."
+    },
+    {
+      "id": "isengard",
+      "name": "Isengard",
+      "coordinates": [490, 520],
+      "isFictional": true,
+      "realWorldNote": "The stronghold of Saruman in a circular valley surrounded by a ring of mountains called the Nan Curunír."
+    }
+  ],
+  "events": [
+    {
+      "chapter": 1,
+      "chapterTitle": "A Long-expected Party",
+      "characterId": "frodo",
+      "locationId": "shire",
+      "quote": "When Mr. Bilbo Baggins of Bag End announced that he would shortly be celebrating his eleventy-first birthday with a party of special magnificence, there was much talk and excitement in Hobbiton.",
+      "quoteContext": "Opening of the novel, Frodo at home in the Shire."
+    },
+    {
+      "chapter": 1,
+      "chapterTitle": "A Long-expected Party",
+      "characterId": "gandalf",
+      "locationId": "shire",
+      "quote": "Gandalf! If you mean the wandering Wizard who gave Old Took a pair of magic diamond studs that fastened themselves and never came undone till ordered, I have not seen him for ages.",
+      "quoteContext": "Gandalf arrives in the Shire for Bilbo's party."
+    },
+    {
+      "chapter": 9,
+      "chapterTitle": "At the Sign of The Prancing Pony",
+      "characterId": "frodo",
+      "locationId": "bree",
+      "quote": "Bree was the chief village of the Bree-land, a small inhabited region, like an island in the empty lands round about.",
+      "quoteContext": "Frodo and the hobbits arrive at Bree after leaving the Shire."
+    },
+    {
+      "chapter": 9,
+      "chapterTitle": "At the Sign of The Prancing Pony",
+      "characterId": "aragorn",
+      "locationId": "bree",
+      "quote": "In the corner they saw a weather-beaten man, rather dark, with a shaggy head of dark hair flecked with grey, and in his eyes a light like the gleam of water in a deep well.",
+      "quoteContext": "Aragorn (as Strider) is first encountered at Bree's inn."
+    },
+    {
+      "chapter": 14,
+      "chapterTitle": "Many Meetings",
+      "characterId": "frodo",
+      "locationId": "rivendell",
+      "quote": "When he came to himself again, he was still in the Hall of Fire, and it was still night. He was lying wrapped in blankets on a couch by the wall. Sam was sitting beside him.",
+      "quoteContext": "Frodo recovers from his wound at Rivendell."
+    },
+    {
+      "chapter": 14,
+      "chapterTitle": "Many Meetings",
+      "characterId": "gandalf",
+      "locationId": "rivendell",
+      "quote": "Gandalf was there. His chair was at Frodo's side, and the table between them was littered with many papers.",
+      "quoteContext": "Gandalf is present at Rivendell during the Council of Elrond."
+    },
+    {
+      "chapter": 14,
+      "chapterTitle": "Many Meetings",
+      "characterId": "aragorn",
+      "locationId": "rivendell",
+      "quote": "Strider turned and there was a fire in his eyes. It was Aragorn son of Arathorn, and he was smiling.",
+      "quoteContext": "Aragorn's true identity is revealed at Rivendell."
+    },
+    {
+      "chapter": 19,
+      "chapterTitle": "The Bridge of Khazad-dûm",
+      "characterId": "frodo",
+      "locationId": "moria",
+      "quote": "Frodo turned and fled, and all the Company turned with him. The orcs poured out of the doorway... it was Moria that had taken Gandalf.",
+      "quoteContext": "The Fellowship passes through Moria; Gandalf falls at the Bridge."
+    },
+    {
+      "chapter": 19,
+      "chapterTitle": "The Bridge of Khazad-dûm",
+      "characterId": "gandalf",
+      "locationId": "moria",
+      "quote": "'You cannot pass,' he said. The orcs stood still, and a dead silence fell. 'I am a servant of the Secret Fire, wielder of the flame of Anor.'",
+      "quoteContext": "Gandalf confronts the Balrog at the Bridge of Khazad-dûm."
+    },
+    {
+      "chapter": 20,
+      "chapterTitle": "Lothlórien",
+      "characterId": "frodo",
+      "locationId": "lothlorien",
+      "quote": "'Welcome, Frodo of the Shire,' she said. 'One member of the Company that set out from Rivendell is absent — where is Gandalf? For I look for him also.'",
+      "quoteContext": "Frodo arrives in Lothlórien and meets Galadriel."
+    },
+    {
+      "chapter": 30,
+      "chapterTitle": "The King of the Golden Hall",
+      "characterId": "aragorn",
+      "locationId": "rohan",
+      "quote": "So they passed through the outer courts and came before the gates of Meduseld; and their horses were taken by men of the King's household.",
+      "quoteContext": "Aragorn arrives at Edoras, the hall of King Théoden of Rohan."
+    },
+    {
+      "chapter": 35,
+      "chapterTitle": "The Road to Isengard",
+      "characterId": "aragorn",
+      "locationId": "isengard",
+      "quote": "They rode at last into the ravine of Nan Curunír. Night came dark under the mountains, and Isengard lay about them.",
+      "quoteContext": "Aragorn and the Three Hunters ride to Isengard."
+    },
+    {
+      "chapter": 40,
+      "chapterTitle": "Minas Tirith",
+      "characterId": "aragorn",
+      "locationId": "gondor",
+      "quote": "Pippin looked out from the shelter of Gandalf's cloak. He wondered if he was awake or still sleeping, still in the swift-moving dream in which he had been wrapped so long since the great ride began.",
+      "quoteContext": "The company arrives at Minas Tirith to prepare for the siege."
+    },
+    {
+      "chapter": 43,
+      "chapterTitle": "The Pyre of Denethor",
+      "characterId": "gandalf",
+      "locationId": "gondor",
+      "quote": "Gandalf came and stood over him. 'Do you think,' said he, 'that the Lord of the Mark has no army? But Théoden's men have not yet come to the battle.'",
+      "quoteContext": "Gandalf defends Minas Tirith during the siege."
+    },
+    {
+      "chapter": 50,
+      "chapterTitle": "Mount Doom",
+      "characterId": "frodo",
+      "locationId": "mordor",
+      "quote": "'I am glad you are here with me,' said Frodo. 'Here at the end of all things, Sam.'",
+      "quoteContext": "Frodo and Sam reach Mount Doom in Mordor."
+    }
+  ]
+}

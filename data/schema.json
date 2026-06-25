@@ -1,0 +1,107 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "InkTrail Book Data",
+  "description": "Schema for character location data used by the InkTrail map viewer",
+  "type": "object",
+  "required": ["book", "characters", "locations", "events"],
+  "properties": {
+    "book": {
+      "type": "object",
+      "required": ["title", "author", "map"],
+      "properties": {
+        "title": { "type": "string" },
+        "author": { "type": "string" },
+        "language": { "type": "string", "description": "ISO 639-1 code, e.g. 'es', 'en'" },
+        "map": {
+          "type": "object",
+          "required": ["type"],
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": ["real", "fantasy"],
+              "description": "'real' uses OpenStreetMap tiles; 'fantasy' overlays a custom image"
+            },
+            "initialCenter": {
+              "type": "array",
+              "items": { "type": "number" },
+              "minItems": 2, "maxItems": 2,
+              "description": "For real maps: [lat, lng]. For fantasy maps: [y, x] in image pixel coords"
+            },
+            "initialZoom": { "type": "number" },
+            "imageUrl": {
+              "type": "string",
+              "description": "Fantasy maps only: URL to the map image"
+            },
+            "imageBounds": {
+              "type": "array",
+              "description": "Fantasy maps only: [[top-left-y, top-left-x], [bottom-right-y, bottom-right-x]] in pixel coords",
+              "items": { "type": "array", "items": { "type": "number" }, "minItems": 2, "maxItems": 2 },
+              "minItems": 2, "maxItems": 2
+            },
+            "attribution": { "type": "string" }
+          }
+        }
+      }
+    },
+    "characters": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "color"],
+        "properties": {
+          "id": { "type": "string" },
+          "name": { "type": "string" },
+          "color": { "type": "string", "description": "CSS color, e.g. '#e63946'" },
+          "description": { "type": "string" }
+        }
+      }
+    },
+    "locations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "coordinates"],
+        "properties": {
+          "id": { "type": "string" },
+          "name": { "type": "string" },
+          "coordinates": {
+            "type": "array",
+            "items": { "type": "number" },
+            "minItems": 2, "maxItems": 2,
+            "description": "For real maps: [lat, lng]. For fantasy maps: [y, x] pixel coords"
+          },
+          "isFictional": {
+            "type": "boolean",
+            "description": "True for fictional places mapped to real-world equivalents"
+          },
+          "realWorldNote": {
+            "type": "string",
+            "description": "For fictional places: scholarly consensus on real-world location"
+          }
+        }
+      }
+    },
+    "events": {
+      "type": "array",
+      "description": "Each event is a character appearing at a location in a chapter",
+      "items": {
+        "type": "object",
+        "required": ["chapter", "characterId", "locationId", "quote"],
+        "properties": {
+          "chapter": { "type": "integer", "minimum": 1 },
+          "chapterTitle": { "type": "string" },
+          "characterId": { "type": "string" },
+          "locationId": { "type": "string" },
+          "quote": {
+            "type": "string",
+            "description": "Verbatim excerpt from the book establishing the character is at this location"
+          },
+          "quoteContext": {
+            "type": "string",
+            "description": "Brief surrounding context for the quote"
+          }
+        }
+      }
+    }
+  }
+}

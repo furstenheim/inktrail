@@ -1,0 +1,60 @@
+:root {
+  --bg: #1a1410;
+  --surface: #241e18;
+  --surface2: #2e2720;
+  --border: #4a3f32;
+  --text: #e8dcc8;
+  --text-muted: #8a7a68;
+  --accent: #c8a96e;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: Georgia, 'Times New Roman', serif;
+  background: var(--bg);
+  color: var(--text);
+  height: 100vh;
+  overflow: hidden;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+input[type="range"] {
+  cursor: pointer;
+  accent-color: var(--accent);
+}
+
+.leaflet-container {
+  background: #1a2030;
+}
+
+/* Animated path segments */
+@keyframes dash-anim {
+  to { stroke-dashoffset: 0; }
+}
+
+.leaflet-popup-content-wrapper {
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-family: Georgia, serif;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+}
+
+.leaflet-popup-tip {
+  background: var(--surface);
+}
+
+.leaflet-popup-content {
+  margin: 12px 16px;
+}
+
+.popup-location { font-size: 13px; font-weight: bold; color: var(--accent); margin-bottom: 4px; }
+.popup-chapter { font-size: 11px; color: var(--text-muted); margin-bottom: 8px; }
+.popup-quote { font-size: 12px; font-style: italic; line-height: 1.5; border-left: 2px solid var(--accent); padding-left: 8px; }
+.popup-note { font-size: 11px; color: var(--text-muted); margin-top: 6px; font-style: normal; }
