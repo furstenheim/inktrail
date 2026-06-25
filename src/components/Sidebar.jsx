@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { processBookData } from '../utils/bookData.js'
 
 const MODES = [
@@ -8,7 +7,8 @@ const MODES = [
 ]
 
 export default function Sidebar({
-  bookData, mode, setMode,
+  bookData, books, currentBookId, onSelectBook,
+  mode, setMode,
   currentChapter, setCurrentChapter,
   visibleCharacters, setVisibleCharacters,
   playing, setPlaying,
@@ -16,8 +16,6 @@ export default function Sidebar({
   const { chapters } = processBookData(bookData)
   const { title, author } = bookData.book
   const { characters } = bookData
-
-  const [loadPanelOpen, setLoadPanelOpen] = useState(false)
 
   function toggleCharacter(id) {
     setVisibleCharacters(prev =>
@@ -158,40 +156,34 @@ export default function Sidebar({
           </div>
         </section>
 
-        {/* Load another book */}
+        {/* Book selector */}
         <section>
-          <div style={{ fontSize: 11, letterSpacing: 1, textTransform: 'uppercase', color: 'var(--text-muted)', marginBottom: 8 }}>Load book data</div>
-          <label style={{
-            display: 'block',
-            padding: '8px 10px',
-            border: '1px dashed var(--border)',
-            borderRadius: 4,
-            fontSize: 12,
-            color: 'var(--text-muted)',
-            textAlign: 'center',
-            cursor: 'pointer',
-          }}>
-            Drop or click to load .json
-            <input
-              type="file"
-              accept=".json"
-              style={{ display: 'none' }}
-              onChange={e => {
-                const file = e.target.files[0]
-                if (!file) return
-                const reader = new FileReader()
-                reader.onload = ev => {
-                  try {
-                    const data = JSON.parse(ev.target.result)
-                    window.__inktrail_load?.(data)
-                  } catch {
-                    alert('Invalid JSON file')
-                  }
-                }
-                reader.readAsText(file)
-              }}
-            />
-          </label>
+          <div style={{ fontSize: 11, letterSpacing: 1, textTransform: 'uppercase', color: 'var(--text-muted)', marginBottom: 10 }}>Books</div>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
+            {books.map(({ id, data }) => {
+              const active = id === currentBookId
+              return (
+                <button
+                  key={id}
+                  onClick={() => onSelectBook(id)}
+                  style={{
+                    background: active ? 'var(--surface2)' : 'transparent',
+                    border: `1px solid ${active ? 'var(--accent)' : 'var(--border)'}`,
+                    borderRadius: 4,
+                    padding: '8px 10px',
+                    color: active ? 'var(--accent)' : 'var(--text-muted)',
+                    textAlign: 'left',
+                    fontSize: 12,
+                  }}
+                >
+                  <div style={{ fontWeight: active ? 'bold' : 'normal', color: active ? 'var(--accent)' : 'var(--text)' }}>
+                    {data.book.title}
+                  </div>
+                  <div style={{ fontSize: 10, color: 'var(--text-muted)', marginTop: 2 }}>{data.book.author}</div>
+                </button>
+              )
+            })}
+          </div>
         </section>
       </div>
 

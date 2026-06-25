@@ -1,11 +1,11 @@
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect } from 'react'
 import MapView from './components/MapView.jsx'
 import Sidebar from './components/Sidebar.jsx'
 import { processBookData } from './utils/bookData.js'
-import defaultBook from '../data/quijote.json'
+import BOOKS from './books.js'
 
 export default function App() {
-  const [bookData, setBookData] = useState(defaultBook)
+  const [bookData, setBookData] = useState(BOOKS[0].data)
   const [mode, setMode] = useState('all')
   const [playing, setPlaying] = useState(false)
   const [visibleCharacters, setVisibleCharacters] = useState(
@@ -24,6 +24,11 @@ export default function App() {
     setPlaying(false)
   }, [bookData])
 
+  function selectBook(id) {
+    const entry = BOOKS.find(b => b.id === id)
+    if (entry) setBookData(entry.data)
+  }
+
   // Video playback
   useEffect(() => {
     if (!playing || mode !== 'video') return
@@ -40,14 +45,6 @@ export default function App() {
     return () => clearTimeout(timer)
   }, [playing, currentChapter, mode, chapters, maxChapter])
 
-  // Expose load function for the file input in Sidebar
-  useEffect(() => {
-    window.__inktrail_load = (data) => {
-      setBookData(data)
-    }
-    return () => { delete window.__inktrail_load }
-  }, [])
-
   // Compute which chapters are "active" for the current mode
   const activeChapters = mode === 'all'
     ? chapters
@@ -55,10 +52,15 @@ export default function App() {
     ? chapters.filter(c => c <= currentChapter)
     : [currentChapter]
 
+  const currentBookId = BOOKS.find(b => b.data === bookData)?.id ?? BOOKS[0].id
+
   return (
     <div style={{ display: 'flex', height: '100vh' }}>
       <Sidebar
         bookData={bookData}
+        books={BOOKS}
+        currentBookId={currentBookId}
+        onSelectBook={selectBook}
         mode={mode}
         setMode={setMode}
         currentChapter={currentChapter}
