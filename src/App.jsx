@@ -9,7 +9,7 @@ export default function App() {
   const [mode, setMode] = useState('all')
   const [playing, setPlaying] = useState(false)
   const [visibleCharacters, setVisibleCharacters] = useState(
-    defaultBook.characters.map(c => c.id)
+    BOOKS[0].data.characters.map(c => c.id)
   )
 
   const { chapters, minChapter, maxChapter } = processBookData(bookData)
