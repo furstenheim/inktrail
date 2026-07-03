@@ -20,6 +20,7 @@ export default function MapView({ bookData, activeChapters, visibleCharacters, m
 
   return (
     <MapContainer
+      key={bookData.book.title}
       {...mapProps}
       style={{ width: '100%', height: '100%' }}
       scrollWheelZoom={true}

@@ -60,7 +60,7 @@ export default function App() {
   const { title } = bookData.book
 
   return (
-    <div style={{ display: 'flex', flexDirection: isMobile ? 'column' : 'row', height: '100vh' }}>
+    <div style={{ display: 'flex', flexDirection: isMobile ? 'column' : 'row', height: '100%' }}>
 
       {/* Desktop sidebar */}
       {!isMobile && (
@@ -85,17 +85,15 @@ export default function App() {
 
         {/* Mobile top bar */}
         {isMobile && (
-          <div style={{
+          <div className="hud" style={{
             position: 'absolute', top: 0, left: 0, right: 0, zIndex: 1000,
             display: 'flex', alignItems: 'center', justifyContent: 'space-between',
             padding: '10px 14px',
-            background: 'rgba(26,20,16,0.88)',
-            backdropFilter: 'blur(6px)',
-            borderBottom: '1px solid var(--border)',
+            borderLeft: 'none', borderRight: 'none', borderTop: 'none',
           }}>
-            <div>
-              <div style={{ fontSize: 9, letterSpacing: 2, textTransform: 'uppercase', color: 'var(--accent)' }}>InkTrail</div>
-              <div style={{ fontSize: 14, fontWeight: 'bold', lineHeight: 1.2 }}>{title}</div>
+            <div style={{ minWidth: 0 }}>
+              <div style={{ fontSize: 9, letterSpacing: 3, textTransform: 'uppercase', color: 'var(--accent)' }}>✒ InkTrail</div>
+              <div style={{ fontSize: 14, fontWeight: 'bold', lineHeight: 1.2, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{title}</div>
             </div>
             <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
               {mode !== 'all' && (
@@ -134,11 +132,10 @@ export default function App() {
 
         {/* Mobile chapter slider (always visible at bottom when in chapter/video mode) */}
         {isMobile && (mode === 'chapter' || mode === 'video') && !panelOpen && (
-          <div style={{
+          <div className="hud" style={{
             position: 'absolute', bottom: 0, left: 0, right: 0, zIndex: 1000,
-            background: 'rgba(26,20,16,0.88)', backdropFilter: 'blur(6px)',
-            padding: '10px 16px 14px',
-            borderTop: '1px solid var(--border)',
+            padding: '12px 16px 16px',
+            borderLeft: 'none', borderRight: 'none', borderBottom: 'none',
           }}>
             <input
               type="range"
@@ -146,18 +143,21 @@ export default function App() {
               max={chapters[chapters.length - 1]}
               value={currentChapter}
               onChange={e => setCurrentChapter(Number(e.target.value))}
-              style={{ width: '100%', height: 28 }}
+              style={{
+                width: '100%', height: 28,
+                '--fill': `${maxChapter === minChapter ? 100 : ((currentChapter - minChapter) / (maxChapter - minChapter)) * 100}%`,
+              }}
             />
           </div>
         )}
 
         {/* Desktop chapter badge */}
         {!isMobile && mode !== 'all' && (
-          <div style={{
+          <div className="hud fade-up" style={{
             position: 'absolute', top: 16, right: 16, zIndex: 1000,
-            background: 'rgba(26,20,16,0.9)', border: '1px solid var(--border)',
-            borderRadius: 6, padding: '8px 16px', fontSize: 13,
-            color: 'var(--accent)', backdropFilter: 'blur(4px)',
+            borderRadius: 10, padding: '10px 18px', fontSize: 14,
+            color: 'var(--accent)', fontStyle: 'italic',
+            boxShadow: 'var(--shadow)',
           }}>
             Chapter {currentChapter}
           </div>

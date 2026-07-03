@@ -21,8 +21,13 @@ export function hexToRgb(hex) {
   return result ? [parseInt(result[1], 16), parseInt(result[2], 16), parseInt(result[3], 16)] : [200, 200, 200]
 }
 
+// Early chapters render as a pale tint of the character color, late chapters
+// fully saturated — keeps every segment visible on the dark map while still
+// encoding time.
 export function blendWithTime(baseHex, progress) {
   const [r, g, b] = hexToRgb(baseHex)
-  const dark = 0.3 + progress * 0.7
-  return `rgba(${Math.round(r * dark)},${Math.round(g * dark)},${Math.round(b * dark)},0.85)`
+  const [pr, pg, pb] = [236, 225, 205] // parchment tint for the earliest chapters
+  const t = 0.55 - progress * 0.55 // 0.55 tint at start → 0 tint at end
+  const mix = (c, p) => Math.round(c + (p - c) * t)
+  return `rgb(${mix(r, pr)},${mix(g, pg)},${mix(b, pb)})`
 }
